@@ -1,44 +1,20 @@
 import React from 'react';
-import {
-  Alert,
-  Platform,
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  TouchableOpacity,
-  TouchableNativeFeedback,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
-//npx react-native run-android
-const YourApp = () => {
-  const onPressButton = () => {
-    Alert.alert('You tapped the button!');
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
+const YourApp = ({ navigation }) => {
+  const navigateToObjectDetection = () => {
+    navigation.navigate('ObjectDetection');
   };
 
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Traffic Camera App</Text>
-      <Text></Text>
 
-      <TouchableOpacity onPress={onPressButton}>
+      <TouchableOpacity onPress={navigateToObjectDetection}>
         <View style={styles.button}>
-          <Text style={styles.buttonText}>Record Traffic</Text>
+          <Text style={styles.buttonText}>Start Object Detection</Text>
         </View>
       </TouchableOpacity>
-
-      <TouchableOpacity onPress={onPressButton}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>View Statistics</Text>
-        </View>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={onPressButton}>
-        <View style={styles.button}>
-            <Text style={styles.buttonText}>Instructions</Text>
-        </View>
-      </TouchableOpacity>
-
     </View>
   );
 };
